@@ -27,6 +27,7 @@ The installed Codex CLI accepts `codex mcp add ysskrishna --url https://www.yssk
 ```bash
 codex plugin marketplace upgrade ysskrishna-mcp
 codex plugin remove ysskrishna-mcp@ysskrishna-mcp
+codex mcp remove ysskrishna
 ```
 
-The Codex IDE extension has no plugin support.
+Confirm the MCP entry uses `https://www.ysskrishna.space/mcp` before removing. The Codex IDE extension has no plugin support.

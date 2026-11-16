@@ -32,6 +32,7 @@ Use `--scope project` when requested. Check `/mcp` for tools.
 ```bash
 gemini extensions update ysskrishna-mcp
 gemini extensions uninstall ysskrishna-mcp
+gemini mcp remove --scope user ysskrishna
 ```
 
-The extension install uses the latest GitHub Release, not the default branch.
+Use the same `--scope` you used when adding the MCP server. Confirm the entry is `https://www.ysskrishna.space/mcp` before removing. The extension install uses the latest GitHub Release, not the default branch.

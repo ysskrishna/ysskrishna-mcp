@@ -15,6 +15,25 @@ The remote Streamable HTTP endpoint is `https://www.ysskrishna.space/mcp`. It pr
 3. Add only the missing entry using the client's supported command or UI. Examples below are documented client commands, not a guarantee that a particular client version is compatible. Verify installed CLI help and supported scope before running. The user's request to connect authorizes the necessary configuration change within the chosen scope; respect host permission requirements.
 4. Check the entry is present, then attempt client-native discovery of the `search` and `fetch` tools and a small public search when the client permits it. Report configuration and connection status separately. If the server is disabled, unavailable, or blocked by client policy, say so and preserve the configuration. Do not claim success based only on an entry being present. Avoid repeated retries, credentials, automatic trust, proxies, and unrelated installations.
 
+## Tools
+
+The server exposes `search` and `fetch`.
+
+**`search`** accepts:
+
+- `query` (string, required; an empty string browses)
+- `type` (`all` | `product` | `blog` | `tool`)
+- `tags` (exact lowercase kebab-case ids, any-match; for example `markdown-and-docs` — display names such as Markdown do not match)
+- `featured` (boolean)
+- `sort` (`auto` | `updated` | `created` | `az`)
+- `page` (integer, starts at 1)
+
+Every search response includes `results` (up to 12 items with `id`, `title`, `url`) and `pagination` (`total`, `page`, `pageCount`).
+
+Example: search with an empty `query`, `tags` set to `markdown-and-docs`, and `type` `tool`.
+
+**`fetch`** accepts `id`, which must be an id returned by search: `product:<number>`, `blog:<slug>`, or `tool:<slug>`. A URL or a bare slug is not an id.
+
 ## Client commands
 
 - **Codex:** `codex mcp list`, then `codex mcp add ysskrishna --url https://www.ysskrishna.space/mcp` if missing. Codex CLI and IDE share configuration; this command normally changes user configuration. Inspect the installed version's help for other scopes.
@@ -26,4 +45,11 @@ The remote Streamable HTTP endpoint is `https://www.ysskrishna.space/mcp`. It pr
 
 ## Removal
 
-Only remove the entry in the requested client and scope. Verify that it refers to the endpoint above before using the client's removal command or UI; leave other servers and the skill itself intact unless removal of those is also requested.
+Only remove the entry in the requested client and scope. Verify the entry points at `https://www.ysskrishna.space/mcp` before removing it. Leave other servers and this skill in place unless the user also asks to remove those.
+
+- **Claude Code (user scope):** `claude mcp remove ysskrishna -s user`
+- **Codex:** `codex mcp remove ysskrishna`
+- **Gemini CLI (user scope):** `gemini mcp remove --scope user ysskrishna`
+- **VS Code and Cursor:** use that client's MCP settings UI (no documented remove CLI in this skill)
+
+For MCP removal, use the client's command or UI. Removing the skill is separate and depends on how it was installed.

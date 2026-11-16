@@ -32,4 +32,10 @@ For a project or local scope, use the applicable documented `--scope` value. Che
 /plugin uninstall ysskrishna-mcp@ysskrishna-mcp
 ```
 
+```bash
+claude mcp remove ysskrishna -s user
+```
+
+Use the documented `--scope` value if you added the MCP entry under project or local scope. Confirm the server URL is `https://www.ysskrishna.space/mcp` before removing.
+
 If `marketplace add owner/repo` fails with `Permission denied (publickey)`, run `git config --global url."https://github.com/".insteadOf git@github.com:` once.

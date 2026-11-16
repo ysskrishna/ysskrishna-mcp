@@ -363,7 +363,9 @@ Ask your agent to use the `connect-ysskrishna-mcp` skill. It identifies your cli
 
 ## Remove
 
-Ask the agent to remove the `ysskrishna` MCP connection in the desired client and scope. Remove the skill separately using the same installer you used to add it.
+Remove the `ysskrishna` MCP connection with that client's command or MCP settings UI (for example `claude mcp remove ysskrishna -s user`, `codex mcp remove ysskrishna`, or `gemini mcp remove --scope user ysskrishna`). Confirm the entry uses `https://www.ysskrishna.space/mcp` before you remove it.
+
+Remove the skill with the same installer you used to add it. **`gh skill`** has install, list, preview, publish, search, and update only — no remove. Delete the skill directory the installer created (see `gh skill install --help` for where it lands). For **skills.sh**, use `npx skills remove connect-ysskrishna-mcp` (or `npx skills remove --help` for scope and agent flags).
 
 ## Built and maintained by
 
