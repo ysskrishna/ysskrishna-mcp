@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-11-16
+
+### Changed
+
+- **Discovery metadata.** Plugin and npm keywords now name the MCP server and the hosts that install this skill. The Cursor plugin category is `developer-tools`, with tags for marketplace filtering. Codex and the agents marketplace stay in `Productivity`.
+- **Release steps.** `AGENTS.md` records how to tag `main`, let GitHub create the Release, and publish npm. `docs/contributing/release-state.md` records what is already published.
+
+[1.0.1]: https://github.com/ysskrishna/ysskrishna-mcp/compare/v1.0.0...v1.0.1
+
 ## [1.0.0] - 2026-11-16
 
 ### Added

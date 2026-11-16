@@ -1,6 +1,6 @@
 {
   "name": "ysskrishna-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
   "author": {
     "name": "ysskrishna",
@@ -11,9 +11,17 @@
   "license": "MIT",
   "keywords": [
     "mcp",
-    "skills",
+    "model-context-protocol",
+    "mcp-server",
     "agent-skills",
-    "read-only"
+    "skills",
+    "cursor",
+    "claude-code",
+    "codex",
+    "gemini",
+    "opencode",
+    "read-only",
+    "ysskrishna"
   ],
   "skills": "./skills/"
 }
