@@ -2,11 +2,11 @@
 
 An Agent Skill that helps an AI agent connect a supported client to the public, read-only ysskrishna MCP server. The server searches and reads public products, blog posts, and tools. It does not execute the website's tools.
 
-The repository and server must be published and enabled before remote installation or connection can work. Client-specific setup and end-to-end compatibility have not yet been verified.
+The server must be deployed and enabled before connection can work. Client-specific setup and end-to-end compatibility have not yet been verified.
 
 ## Install the skill
 
-Once this repository is public, install the skill using a compatible skills installer:
+Install the skill using a compatible skills installer:
 
 ```bash
 npx skills add ysskrishna/ysskrishna-mcp
