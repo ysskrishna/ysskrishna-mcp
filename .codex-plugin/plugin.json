@@ -1,0 +1,34 @@
+{
+  "name": "ysskrishna-mcp",
+  "version": "0.1.0",
+  "description": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
+  "author": {
+    "name": "ysskrishna",
+    "url": "https://ysskrishna.space"
+  },
+  "homepage": "https://github.com/ysskrishna/ysskrishna-mcp",
+  "repository": "https://github.com/ysskrishna/ysskrishna-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "skills",
+    "agent-skills",
+    "read-only"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ysskrishna MCP",
+    "shortDescription": "Connect to ysskrishna MCP",
+    "longDescription": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
+    "developerName": "ysskrishna",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "defaultPrompt": [
+      "Connect ysskrishna MCP to my AI tool."
+    ],
+    "websiteURL": "https://github.com/ysskrishna/ysskrishna-mcp"
+  }
+}

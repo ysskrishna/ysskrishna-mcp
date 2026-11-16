@@ -1,0 +1,16 @@
+{
+  "name": "ysskrishna-mcp",
+  "owner": {
+    "name": "ysskrishna"
+  },
+  "metadata": {
+    "description": "Connect an AI agent to the public, read-only ysskrishna MCP server."
+  },
+  "plugins": [
+    {
+      "name": "ysskrishna-mcp",
+      "source": "./",
+      "description": "Connect an AI agent to the public, read-only ysskrishna MCP server."
+    }
+  ]
+}
