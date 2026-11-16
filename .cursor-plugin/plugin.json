@@ -1,10 +1,9 @@
 {
   "name": "ysskrishna-mcp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
   "author": {
-    "name": "ysskrishna",
-    "url": "https://ysskrishna.space"
+    "name": "ysskrishna"
   },
   "homepage": "https://github.com/ysskrishna/ysskrishna-mcp",
   "repository": "https://github.com/ysskrishna/ysskrishna-mcp",

@@ -1,0 +1,63 @@
+# Runs bash validate-skills.sh for manifest and README checks.
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/**"
+      - "README.md"
+      - "docs/**"
+      - "plugin.json"
+      - "package.json"
+      - "index.js"
+      - "gemini-extension.json"
+      - "skills.sh.json"
+      - "CHANGELOG.md"
+      - "AGENTS.md"
+      - ".claude-plugin/**"
+      - ".agents/**"
+      - ".codex-plugin/**"
+      - ".cursor-plugin/**"
+      - ".kimi-plugin/**"
+      - "validate-skills.sh"
+      - ".github/workflows/validate-skills.yml"
+      - ".github/workflows/publish-npm.yml"
+      - ".github/actions/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/**"
+      - "README.md"
+      - "docs/**"
+      - "plugin.json"
+      - "package.json"
+      - "index.js"
+      - "gemini-extension.json"
+      - "skills.sh.json"
+      - "CHANGELOG.md"
+      - "AGENTS.md"
+      - ".claude-plugin/**"
+      - ".agents/**"
+      - ".codex-plugin/**"
+      - ".cursor-plugin/**"
+      - ".kimi-plugin/**"
+      - "validate-skills.sh"
+      - ".github/workflows/validate-skills.yml"
+      - ".github/workflows/publish-npm.yml"
+      - ".github/actions/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate skills and repository
+        run: bash validate-skills.sh

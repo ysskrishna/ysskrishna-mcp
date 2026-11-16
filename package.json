@@ -1,0 +1,44 @@
+{
+  "name": "@ysskrishna/ysskrishna-mcp",
+  "version": "1.0.0",
+  "description": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "ysskrishna (https://ysskrishna.space)",
+  "homepage": "https://github.com/ysskrishna/ysskrishna-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysskrishna/ysskrishna-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysskrishna/ysskrishna-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "index.js",
+    "skills/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    ".cursor-plugin/",
+    ".kimi-plugin/",
+    ".agents/",
+    "plugin.json",
+    "gemini-extension.json",
+    "skills.sh.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "skills",
+    "agent-skills",
+    "read-only"
+  ]
+}
