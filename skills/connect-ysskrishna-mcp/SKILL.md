@@ -52,4 +52,4 @@ Only remove the entry in the requested client and scope. Verify the entry points
 - **Gemini CLI (user scope):** `gemini mcp remove --scope user ysskrishna`
 - **VS Code and Cursor:** use that client's MCP settings UI (no documented remove CLI in this skill)
 
-For MCP removal, use the client's command or UI. Removing the skill is separate and depends on how it was installed.
+For MCP removal, use the client's command or UI. Removing the skill is separate and depends on how it was installed. `gh skill` has no uninstall; delete the skill directory that install created. For skills.sh, run `npx skills remove connect-ysskrishna-mcp`.
