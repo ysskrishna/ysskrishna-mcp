@@ -361,6 +361,10 @@ More in [docs/other-agents.md](docs/other-agents.md#github-cli).
 
 Ask your agent to use the `connect-ysskrishna-mcp` skill. It identifies your client and scope, checks existing MCP entries, adds `https://www.ysskrishna.space/mcp` when needed, and verifies the connection where the client supports it.
 
+## Tools
+
+The server exposes `search` (query, type, tags, featured, sort, page) and `fetch` (id). Parameters and real responses are in [docs/tools.md](docs/tools.md).
+
 ## Remove
 
 Remove the `ysskrishna` MCP connection with that client's command or MCP settings UI (for example `claude mcp remove ysskrishna -s user`, `codex mcp remove ysskrishna`, or `gemini mcp remove --scope user ysskrishna`). Confirm the entry uses `https://www.ysskrishna.space/mcp` before you remove it.
