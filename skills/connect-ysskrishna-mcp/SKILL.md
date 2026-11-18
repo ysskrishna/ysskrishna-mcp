@@ -22,7 +22,7 @@ The server exposes `search` and `fetch`.
 **`search`** accepts:
 
 - `query` (string, required; an empty string browses)
-- `type` (`all` | `product` | `blog` | `tool`)
+- `type` (`all` | `product` | `blog` | `tool` | `course`)
 - `tags` (exact lowercase kebab-case ids, any-match; for example `markdown-and-docs` — display names such as Markdown do not match)
 - `featured` (boolean)
 - `sort` (`auto` | `updated` | `created` | `az`)
@@ -32,7 +32,7 @@ Every search response includes `results` (up to 12 items with `id`, `title`, `ur
 
 Example: search with an empty `query`, `tags` set to `markdown-and-docs`, and `type` `tool`.
 
-**`fetch`** accepts `id`, which must be an id returned by search: `product:<number>`, `blog:<slug>`, or `tool:<slug>`. A URL or a bare slug is not an id.
+**`fetch`** accepts `id`, which must be an id returned by search: `product:<number>`, `blog:<slug>`, `tool:<slug>`, or `course:<slug>`. A course id returns that course, not one chapter. A URL or a bare slug is not an id.
 
 ## Client commands
 
