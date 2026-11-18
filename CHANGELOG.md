@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-11-19
+
+### Changed
+
+- **Courses.** `search` accepts `type` `course`. `fetch` accepts `course:<slug>` for a whole course. Skill, tools doc, and Context7 rules match the site catalog.
+
+[1.0.3]: https://github.com/ysskrishna/ysskrishna-mcp/compare/v1.0.2...v1.0.3
+
 ## [1.0.2] - 2026-11-16
 
 ### Changed

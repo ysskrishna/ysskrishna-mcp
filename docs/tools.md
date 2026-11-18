@@ -1,6 +1,6 @@
 # ysskrishna MCP tools
 
-The server at `https://www.ysskrishna.space/mcp` uses Streamable HTTP, needs no API key and is read-only. It exposes two tools, `search` and `fetch`, over the public products, blog posts and tools on ysskrishna.space. Searches go to the remote server, so do not send sensitive information.
+The server at `https://www.ysskrishna.space/mcp` uses Streamable HTTP, needs no API key and is read-only. It exposes two tools, `search` and `fetch`, over the public products, blog posts, tools, and courses on ysskrishna.space. Searches go to the remote server, so do not send sensitive information.
 
 ## Connect
 
@@ -38,12 +38,12 @@ Setup guides for other agents are in this `docs/` folder.
 
 ## search
 
-Search or browse public products, blog posts and tools. Each page has up to 12 results, and every response includes `pagination`.
+Search or browse public products, blog posts, tools, and courses. Each page has up to 12 results, and every response includes `pagination`.
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | `query` | string, max 200 chars | Yes | Text to search. Use an empty string to browse everything. |
-| `type` | `all` \| `product` \| `blog` \| `tool` | No | Content type filter. Omit it or use `all` for every type. |
+| `type` | `all` \| `product` \| `blog` \| `tool` \| `course` | No | Content type filter. Omit it or use `all` for every type. |
 | `tags` | array of up to 10 strings | No | Exact lowercase kebab-case tag ids, for example `markdown-and-docs`. Display names such as `Markdown` do not match. Several tags match any of them. |
 | `featured` | boolean | No | When `true`, only featured items. |
 | `sort` | `auto` \| `updated` \| `created` \| `az` | No | `auto` ranks by relevance when `query` is not empty, otherwise newest updated first. `updated` and `created` are newest first. `az` is A to Z by title. |
@@ -87,7 +87,7 @@ Read the full public content of one search result.
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | string, max 200 chars | Yes | An id returned by `search`: `product:<number>`, `blog:<slug>` or `tool:<slug>`. |
+| `id` | string, max 200 chars | Yes | An id returned by `search`: `product:<number>`, `blog:<slug>`, `tool:<slug>`, or `course:<slug>`. A course id is the course, not a chapter. |
 
 ```json
 {
@@ -112,4 +112,4 @@ The structured result has `id`, `title`, `text` (the page content as Markdown), 
 }
 ```
 
-A bare slug or a URL is not an id. `{"id": "markdown-to-slack"}` returns a tool error: `Content not found. Use an id returned by search, for example product:61, blog:<slug>, or tool:<slug>.`
+A bare slug or a URL is not an id. `{"id": "markdown-to-slack"}` returns a tool error: `Content not found. Use an id returned by search, for example product:61, blog:<slug>, tool:<slug>, or course:<slug>.`

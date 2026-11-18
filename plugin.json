@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ysskrishna-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Connect an AI agent to the public, read-only ysskrishna MCP server.",
   "author": {
     "name": "ysskrishna",
