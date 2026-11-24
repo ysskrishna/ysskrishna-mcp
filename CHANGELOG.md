@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **Tool docs.** Document the new `list_tags` tool, the richer `search` results (`type`, `summary`, `tags`, `createdAt`, `updatedAt`), ISO 8601 UTC dates, the rule for a missing `updatedAt`, the current not-found and unknown-tag errors, `listChanged: false`, and the `Origin` policy for browser-based clients.
+
 ## [1.0.3] - 2026-11-19
 
 ### Changed

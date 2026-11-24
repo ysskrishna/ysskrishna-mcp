@@ -6,33 +6,35 @@ license: MIT
 
 # Connect ysskrishna MCP
 
-The remote Streamable HTTP endpoint is `https://www.ysskrishna.space/mcp`. It provides read-only search and fetch for public site content; it does not run the site's tools. Searches go to the remote server, so do not send sensitive information. No API key is needed.
+The remote Streamable HTTP endpoint is `https://www.ysskrishna.space/mcp`. It provides read-only search, fetch and tag listing for public site content (products, blog posts, tools and courses); it does not run the site's tools. Searches go to the remote server, so do not send sensitive information. No API key is needed.
 
 ## Setup
 
 1. Identify the client and the intended configuration scope from the request and environment. If either is unclear and would change the files or users affected, ask. Do not configure other clients or scopes without being asked.
 2. Inspect the client's existing MCP entries using its documented listing command or settings UI. If `ysskrishna` already points to this endpoint, leave it intact and verify it. If the name points elsewhere, or a different entry already uses the endpoint, explain the conflict and ask before changing anything. Preserve unrelated configuration and tool trust settings.
 3. Add only the missing entry using the client's supported command or UI. Examples below are documented client commands, not a guarantee that a particular client version is compatible. Verify installed CLI help and supported scope before running. The user's request to connect authorizes the necessary configuration change within the chosen scope; respect host permission requirements.
-4. Check the entry is present, then attempt client-native discovery of the `search` and `fetch` tools and a small public search when the client permits it. Report configuration and connection status separately. If the server is disabled, unavailable, or blocked by client policy, say so and preserve the configuration. Do not claim success based only on an entry being present. Avoid repeated retries, credentials, automatic trust, proxies, and unrelated installations.
+4. Check the entry is present, then attempt client-native discovery of the `search`, `fetch` and `list_tags` tools and a small public search when the client permits it. Report configuration and connection status separately. If the server is disabled, unavailable, or blocked by client policy, say so and preserve the configuration. Do not claim success based only on an entry being present. Avoid repeated retries, credentials, automatic trust, proxies, and unrelated installations.
 
 ## Tools
 
-The server exposes `search` and `fetch`.
+The server exposes `search`, `fetch` and `list_tags`.
 
 **`search`** accepts:
 
 - `query` (string, required; an empty string browses)
 - `type` (`all` | `product` | `blog` | `tool` | `course`)
-- `tags` (exact lowercase kebab-case ids, any-match; for example `markdown-and-docs` — display names such as Markdown do not match)
+- `tags` (exact lowercase kebab-case ids, any-match; for example `markdown-and-docs`; display names such as Markdown do not match; `list_tags` returns the ids, and an unknown tag error suggests close ids)
 - `featured` (boolean)
 - `sort` (`auto` | `updated` | `created` | `az`)
 - `page` (integer, starts at 1)
 
-Every search response includes `results` (up to 12 items with `id`, `title`, `url`) and `pagination` (`total`, `page`, `pageCount`).
+Every search response includes `results` (up to 12 items with `id`, `title`, `url`, `type`, `summary`, `tags`, `createdAt`, and `updatedAt` when the item was updated) and `pagination` (`total`, `page`, `pageCount`). Dates are ISO 8601 UTC, for example `2026-11-19T00:00:00.000Z`.
 
 Example: search with an empty `query`, `tags` set to `markdown-and-docs`, and `type` `tool`.
 
-**`fetch`** accepts `id`, which must be an id returned by search: `product:<number>`, `blog:<slug>`, `tool:<slug>`, or `course:<slug>`. A course id returns that course, not one chapter. A URL or a bare slug is not an id.
+**`fetch`** accepts `id`, which must be an id returned by search: `product:<number>`, `blog:<slug>`, `tool:<slug>`, or `course:<slug>`. A course id returns that course, not one chapter. A URL or a bare slug is not an id. It returns `id`, `title`, `text` (Markdown), `url` and `metadata` (`type`, `tags`, `createdAt`, and `updatedAt` when the item was updated).
+
+**`list_tags`** takes no arguments and returns `tags`, each with `id`, `name`, `group` and `count`.
 
 ## Client commands
 
