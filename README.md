@@ -363,7 +363,7 @@ Ask your agent to use the `connect-ysskrishna-mcp` skill. It identifies your cli
 
 ## Tools
 
-The server exposes `search` (query, type, tags, featured, sort, page) and `fetch` (id). Parameters and real responses are in [docs/tools.md](docs/tools.md).
+The server exposes `search` (query, type, tags, featured, sort, page), `fetch` (id) and `list_tags` (no arguments) over public products, blog posts, tools and courses. Search results include a short summary, type, tags and dates. Parameters and real responses are in [docs/tools.md](docs/tools.md).
 
 ## Remove
 

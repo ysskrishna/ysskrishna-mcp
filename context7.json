@@ -3,7 +3,7 @@
   "url": "https://context7.com/ysskrishna/ysskrishna-mcp",
   "public_key": "pk_VesXVq9WjBT8ecKU9XIZz",
   "projectTitle": "ysskrishna MCP",
-  "description": "Agent skill and setup guides for connecting AI agents to the public, read-only ysskrishna MCP server at https://www.ysskrishna.space/mcp, which exposes search and fetch tools for the site's products, blog posts, tools, and courses.",
+  "description": "Agent skill and setup guides for connecting AI agents to the public, read-only ysskrishna MCP server at https://www.ysskrishna.space/mcp, which exposes search, fetch and list_tags tools for the site's products, blog posts, tools and courses.",
   "excludeFolders": [
     "archive",
     "archived",
@@ -27,8 +27,8 @@
     "AGENTS.md"
   ],
   "rules": [
-    "The endpoint is https://www.ysskrishna.space/mcp (Streamable HTTP, no API key); it exposes two read-only tools, search and fetch.",
-    "search filters tags by exact lowercase kebab-case ids such as markdown-and-docs; display names such as Markdown do not match.",
-    "fetch only accepts an id returned by search: product:<number>, blog:<slug>, tool:<slug>, or course:<slug>; a URL or bare slug is not an id."
+    "The endpoint is https://www.ysskrishna.space/mcp (Streamable HTTP, no API key); it exposes three read-only tools, search, fetch and list_tags.",
+    "search filters tags by exact lowercase kebab-case ids such as markdown-and-docs; display names such as Markdown do not match; list_tags returns the valid ids.",
+    "fetch only accepts an id returned by search: product:<number>, blog:<slug>, tool:<slug> or course:<slug>; a URL or bare slug is not an id."
   ]
 }
